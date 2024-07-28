@@ -6,14 +6,20 @@ const container = document.querySelector("#container")
 containerLength = container.offsetHeight
 cellLength = containerLength / rows
 
-for (let i = 0; i < (rows * cols); i++) {
-    const cell = document.createElement("div")
-    cell.setAttribute("class", "cell")
-    cell.setAttribute("style", "background-color: #fff; height: " + cellLength + "px; width: " + cellLength + "px;")
-    container.appendChild(cell)
+function constructGrid() {   
+    for (let i = 0; i < (rows * cols); i++) {
+        const cell = document.createElement("div")
+        cell.classList.add("cell")
+        cell.setAttribute("style", "height: " + cellLength + "px; width: " + cellLength + "px;")
+        container.appendChild(cell)
+    }
 }
+
+constructGrid()
 
 const cells = document.querySelectorAll(".cell")
 cells.forEach((cell) => {
-    console.log(cell.offsetHeight)
+    cell.addEventListener('mouseover', () => {
+        cell.classList.add("active")
+    })
 })

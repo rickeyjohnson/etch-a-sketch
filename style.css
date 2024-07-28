@@ -19,3 +19,11 @@ body {
     flex-wrap: wrap;
     align-content: center;
 }
+
+.cell {
+    background-color: white;
+}
+
+.cell.active {
+    background-color: black;
+}
