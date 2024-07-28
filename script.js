@@ -21,11 +21,10 @@ function deleteGrid() {
 
 const button = document.querySelector("#user-input")
 button.addEventListener('click', () => {
-    sides = Number.parseInt(prompt("how many squares per side do you want? good sir!"))
-
-    if (sides > 100 || sides < 1) {
-        sides = Number.parseInt(prompt("you cant do over 100 or negative silly. try again!"))
-    } 
+    
+    do {
+        sides = Number.parseInt(prompt("how many squares per side do you want (no negatives or over 100)? good sir!"))
+    } while (sides > 100 || sides < 1)
 
     cellLength = containerLength / sides
 
