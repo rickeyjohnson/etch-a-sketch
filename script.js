@@ -12,10 +12,24 @@ function constructGrid(s) {
     }
 }
 
+function deleteGrid() {
+    cells = document.querySelectorAll(".cell")
+    cells.forEach((cell) => {
+        cell.remove()
+    })
+}
+
 const button = document.querySelector("#user-input")
 button.addEventListener('click', () => {
     sides = Number.parseInt(prompt("how many squares per side do you want? good sir!"))
+
+    if (sides > 100 || sides < 1) {
+        sides = Number.parseInt(prompt("you cant do over 100 or negative silly. try again!"))
+    } 
+
     cellLength = containerLength / sides
+
+    deleteGrid()
     constructGrid(sides)
 
     cells = document.querySelectorAll(".cell")
