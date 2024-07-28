@@ -26,6 +26,15 @@ body {
     color: white;
 }
 
+#btn-container {
+    display: flex;
+    width: 500px;
+}
+
+#btn-container div {
+    flex: 1;
+}
+
 .cell {
     background-color: white;
 }
