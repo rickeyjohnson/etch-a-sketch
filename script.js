@@ -29,6 +29,8 @@ function clearGrid() {
 const gridSpecButton = document.querySelector("#user-input")
 const resetButton = document.querySelector("#reset")
 
+constructGrid(16)
+
 gridSpecButton.addEventListener('click', () => {
 
     do {
