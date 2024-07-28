@@ -19,9 +19,18 @@ function deleteGrid() {
     })
 }
 
-const button = document.querySelector("#user-input")
-button.addEventListener('click', () => {
-    
+function clearGrid() {
+    cells = document.querySelectorAll(".cell")
+    cells.forEach((cell) => {
+        cell.classList.remove("active")
+    })
+}
+
+const gridSpecButton = document.querySelector("#user-input")
+const resetButton = document.querySelector("#reset")
+
+gridSpecButton.addEventListener('click', () => {
+
     do {
         sides = Number.parseInt(prompt("how many squares per side do you want (no negatives or over 100)? good sir!"))
     } while (sides > 100 || sides < 1)
@@ -37,4 +46,8 @@ button.addEventListener('click', () => {
             cell.classList.add("active")
         })
     })
+})
+
+resetButton.addEventListener('click', () => {
+    clearGrid()
 })
