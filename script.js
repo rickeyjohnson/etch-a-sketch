@@ -10,7 +10,7 @@ cellLength = containerLength / rows
 for (let i = 0; i < (rows * cols); i++) {
     const cell = document.createElement("div")
     cell.classList.add = "cell"
-    cell.setAttribute("style", "background-color: pink; border: 2px purple solid; height: " + cellLength + "px; width: " + cellLength + "px;")
+    cell.setAttribute("style", "background-color: #fff; height: " + cellLength + "px; width: " + cellLength + "px;")
     container.appendChild(cell)
 }
 
