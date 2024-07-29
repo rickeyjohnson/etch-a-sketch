@@ -4,6 +4,7 @@ const container = document.querySelector("#container")
 containerLength = container.offsetHeight
 
 function constructGrid(s) {   
+    cellLength = containerLength / s
     for (let i = 0; i < (s ** 2); i++) {
         const cell = document.createElement("div")
         cell.classList.add("cell")
@@ -37,19 +38,24 @@ gridSpecButton.addEventListener('click', () => {
         sides = Number.parseInt(prompt("how many squares per side do you want (no negatives or over 100)? good sir!"))
     } while (sides > 100 || sides < 1)
 
-    cellLength = containerLength / sides
-
     deleteGrid()
     constructGrid(sides)
 
     cells = document.querySelectorAll(".cell")
     cells.forEach((cell) => {
-        cell.addEventListener('mouseover', () => {
-            cell.classList.add("active")
-        })
+    cell.addEventListener('mouseover', () => {
+        cell.classList.add("active")
     })
+})
 })
 
 resetButton.addEventListener('click', () => {
     clearGrid()
+})
+
+cells = document.querySelectorAll(".cell")
+cells.forEach((cell) => {
+    cell.addEventListener('mouseover', () => {
+        cell.classList.add("active")
+    })
 })
